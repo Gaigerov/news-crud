@@ -1,0 +1,61 @@
+.animate__fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate__slideOut {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+  to { opacity: 0; height: 0; padding: 0; margin: 0; transform: translateY(-10px); }
+}
+
+/* Fade animations */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Slide animations */
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Button pulse effect */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
