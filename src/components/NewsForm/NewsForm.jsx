@@ -14,7 +14,10 @@ const NewsForm = ({editItem, onCancel}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (editItem) {
-            updateNews(editItem.id, formData);
+            updateNews(editItem.id, {
+                ...formData,
+                createdAt: editItem.createdAt
+            });
         } else {
             addNews(formData);
         }
@@ -40,7 +43,7 @@ const NewsForm = ({editItem, onCancel}) => {
                 required
                 rows={4}
                 className={styles.newsForm__textarea}
-                style={{minHeight: '120px'}} 
+                style={{minHeight: '120px'}}
             />
             <div className={styles.newsForm__buttons}>
                 <button type="submit" className={styles.newsForm__button}>
